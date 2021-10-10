@@ -13,30 +13,54 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Queue">
+      <UniqueIdentifier>{1d581391-360e-4573-a5dc-00c2d5d30542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Mutex">
+      <UniqueIdentifier>{01442f5d-4b79-4ea1-aa5a-51150b584923}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mutex">
+      <UniqueIdentifier>{6b6c9152-4d21-4a61-91e7-1cfb169faf09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Queue">
+      <UniqueIdentifier>{2ab5cbe0-4f08-4261-ae04-d30fb47a0d51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Function.cpp">
+    <ClCompile Include="Point.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MutexFactorialFunction.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Mutex</Filter>
     </ClCompile>
-    <ClCompile Include="Point.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="MutexFunction.cpp">
+      <Filter>Source Files\Mutex</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueFactorialFunction.cpp">
+      <Filter>Source Files\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="QueueFunction.cpp">
+      <Filter>Source Files\Queue</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Function.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="QueueFactorialFunction.h">
+      <Filter>Header Files\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="QueueFunction.h">
+      <Filter>Header Files\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="MutexFunction.h">
+      <Filter>Header Files\Mutex</Filter>
     </ClInclude>
     <ClInclude Include="MutexFactorialFunction.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Mutex</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

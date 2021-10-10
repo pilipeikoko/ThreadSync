@@ -1,7 +1,7 @@
 #pragma once
-#include "MutexFunction.h"
+#include "QueueFunction.h"
 
-class MutexFactorialFunction : public MutexFunction {
+class QueueFactorialFunction : public QueueFunction {
 private:
 	void functionCalculation(long number) override;
 	void factorialCalculation(long n);

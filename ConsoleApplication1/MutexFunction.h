@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class Function {
+class MutexFunction {
 protected:
 	mutex outputMutex;
 	mutex calculationMutex;
@@ -38,6 +38,6 @@ protected:
 	virtual void functionCalculation(long number) = 0;
 
 public:
-	Function();
+	MutexFunction();
 	virtual int calculateResult(int number = 5);
 };

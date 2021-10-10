@@ -1,6 +1,6 @@
-#include "Function.h"
+#include "MutexFunction.h"
 
-Function::Function() {
+MutexFunction::MutexFunction() {
 	notifiedResultListener = false;
 	notifedLogger = false;
 	isLogPrinted = false;
@@ -10,20 +10,20 @@ Function::Function() {
 	currentArgument = 1;
 }
 
-inline void Function::initFile(char filename[])
+inline void MutexFunction::initFile(char filename[])
 {
 	functionResultWritter.open(filename, std::fstream::in | std::fstream::out | std::fstream::trunc);
 	functionResultWritter.close();
 }
 
-inline void Function::writeFunctionResult(char filename[], std::string result)
+inline void MutexFunction::writeFunctionResult(char filename[], std::string result)
 {
 	functionResultWritter.open(filename, std::fstream::in | std::fstream::out | std::fstream::app);
 	functionResultWritter << result << "\n";
 	functionResultWritter.close();
 }
 
-inline void Function::resultListener() {
+inline void MutexFunction::resultListener() {
 	const char filename[] = "../results";
 	{
 		std::unique_lock<std::mutex> outLock(outputMutex);
@@ -48,7 +48,7 @@ inline void Function::resultListener() {
 	}
 }
 
-inline void Function::logWriter() {
+inline void MutexFunction::logWriter() {
 	const char filename[] = "../log";
 	{
 		std::unique_lock<std::mutex> lock(outputMutex);
@@ -77,11 +77,11 @@ inline void Function::logWriter() {
 	}
 }
 
-inline int Function::calculateResult(int number)
+inline int MutexFunction::calculateResult(int number)
 {
-	std::thread result(&Function::resultListener, this);
-	std::thread log(&Function::logWriter, this);
-	std::thread function(&Function::functionCalculation, this, number);
+	std::thread result(&MutexFunction::resultListener, this);
+	std::thread log(&MutexFunction::logWriter, this);
+	std::thread function(&MutexFunction::functionCalculation, this, number);
 
 
 	function.join();

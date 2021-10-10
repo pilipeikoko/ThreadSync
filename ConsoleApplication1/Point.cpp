@@ -13,7 +13,7 @@ Point::~Point() {
 }
 
 string Point::logValue() {
-	std::string record = std::to_string(this->x) + " " + std::to_string(this->y) + " " + this->initTime + "\n";
+	std::string record = std::to_string(this->y) + " " + this->initTime + "\n";
 	makeDeletable();
 	return record;
 }
